@@ -53,6 +53,14 @@ class main
 		echo htmlFunction::breakLine();
 		echo htmlFunction::horizontalline();
 
+		echo htmlFunction::headingOne("Last two characters of the string are: ");
+		echo stringFunction::strReplace($date,-2);
+		echo htmlFunction::breakLine();
+		echo htmlFunction::horizontalline();
+
+
+
+
 
 
 
@@ -97,6 +105,10 @@ class stringFunction
 	 static public function stringASCII($date)
 	 {
 	 	return ord($date);
+	 }
+	 static public function strReplace($date,$value)
+	 {	
+	 	return substr($date,-2);
 	 }
 }
 
