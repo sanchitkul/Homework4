@@ -48,6 +48,11 @@ class main
 		echo htmlFunction::breakLine();
 		echo htmlFunction::horizontalline();
 
+		echo htmlFunction::headingOne("ASCII Value");
+		echo stringFunction::stringASCII($date);
+		echo htmlFunction::breakLine();
+		echo htmlFunction::horizontalline();
+
 
 
 
@@ -88,6 +93,10 @@ class stringFunction
 	 static public function stringLength($date)
 	 {
 	 	return strlen($date);
+	 }
+	 static public function stringASCII($date)
+	 {
+	 	return ord($date);
 	 }
 }
 
