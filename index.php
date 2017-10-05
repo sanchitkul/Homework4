@@ -57,7 +57,11 @@ class main
 		echo stringFunction::strReplace($date,-2);
 		echo htmlFunction::breakLine();
 		echo htmlFunction::horizontalline();
-
+        
+        echo htmlFunction::headingOne("String converted to Array:");
+		echo ArrayFunction::printThis($array,true);
+		echo htmlFunction::breakLine();
+		echo htmlFunction::horizontalline();
 
 
 
@@ -110,8 +114,19 @@ class stringFunction
 	 {	
 	 	return substr($date,-2);
 	 }
+	 static public function strSplit($date)
+	 {
+	 	$array=str_split($date,2);
+	 	return $array;
+     } 
 }
-
+class ArrayFunction
+{
+	static public function printThis()
+	{
+	   return print_r(array_values($array));
+	}
+}
 class htmlFunction
 {
   static public function horizontalline() 
