@@ -20,13 +20,21 @@ class main
 		echo "The value of \$year: ";
 		print_r($year);
 
-		echo htmlTags::breakLine();
+		echo htmlFunction::horizontalline();
 
-		echo htmlTags::headingOne("Replace - with /");
+	    echo htmlFunction::headingOne("Replace - with /");
 		$date = stringFunction::stringreplace("-","/",$date);
 		echo $date;
-		echo htmlTags::breakLine();
-		echo htmlTags::horizontalline();
+		echo htmlFunction::breakLine();
+		echo htmlFunction::horizontalline();
+
+		echo htmlFunction::headingOne("Compare date and tar");
+		echo stringFunction::stringCommparison($date,$tar);
+		echo htmlFunction::breakLine();
+		echo htmlFunction::horizontalline();
+
+
+
      }
 
 }
@@ -38,8 +46,23 @@ class stringFunction
 	 	$string = str_replace($src,$tar,$string);
 	 	return $string;
 	 }
+	  static public function stringCommparison($stringA,$stringB)
+	 {
+	 	if($stringA==$stringB)
+	 	{
+	 		echo "Oops";
+	 	}
+	 		else if($stringA>$stringB)
+	 		{
+	 			return "Future";
+	 		}
+	 			else if($stringA<$stringB)
+	 			{
+	 				return "Past";
+	 			}
+	 }
 }
-class htmlTags
+class htmlFunction
 {
   static public function horizontalline() 
   {
@@ -53,6 +76,7 @@ class htmlTags
     {
     	return '<br>';
     }
+    
  }
 
 
