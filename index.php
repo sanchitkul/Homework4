@@ -33,6 +33,15 @@ class main
 		echo htmlFunction::breakLine();
 		echo htmlFunction::horizontalline();
 
+        echo htmlFunction::headingOne("Find / position");
+		echo stringFunction::striposistion($date, "/");
+		echo htmlFunction::breakLine();
+		echo htmlFunction::horizontalline();
+
+		echo htmlFunction::headingOne("Word Count Example");
+		echo stringFunction::strCount($date);
+		echo htmlTags::breakLine();
+		echo htmlFunction::horizontalline();
 
 
      }
@@ -61,7 +70,16 @@ class stringFunction
 	 				return "Past";
 	 			}
 	 }
+	 static public function striposistion($date,$slash) 
+	 {
+         return strpos($date,$slash);
+     }
+     static public function strCount($date)
+	 {
+	 	return str_word_count($date);
+	 }
 }
+
 class htmlFunction
 {
   static public function horizontalline() 
