@@ -38,10 +38,17 @@ class main
 		echo htmlFunction::breakLine();
 		echo htmlFunction::horizontalline();
 
-		echo htmlFunction::headingOne("Word Count Example");
+		echo htmlFunction::headingOne("Count words in date");
 		echo stringFunction::strCount($date);
-		echo htmlTags::breakLine();
+		echo htmlFunction::breakLine();
 		echo htmlFunction::horizontalline();
+
+		echo htmlFunction::headingOne("Length of string");
+		echo stringFunction::stringLength($date);
+		echo htmlFunction::breakLine();
+		echo htmlFunction::horizontalline();
+
+
 
 
      }
@@ -77,6 +84,10 @@ class stringFunction
      static public function strCount($date)
 	 {
 	 	return str_word_count($date);
+	 }
+	 static public function stringLength($date)
+	 {
+	 	return strlen($date);
 	 }
 }
 
