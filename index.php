@@ -5,8 +5,6 @@ $obj = new main();
 class main
 {
 
-	// private $html; 
-
 	public function __construct()
 	{
 
@@ -19,7 +17,6 @@ class main
 		$year = array("2012", "396", "300","2000", "1100", "1089");
 		echo "The value of \$year: ";
 		print_r($year);
-
 		echo htmlFunction::horizontalline();
 
 	    echo htmlFunction::headingOne("Replace - with /");
@@ -59,24 +56,26 @@ class main
 		echo htmlFunction::horizontalline();
         
         echo htmlFunction::headingOne("String converted to Array:");
-		echo ArrayFunction::printThis($array,true);
+		echo ArrayFunction::seperate($date);
 		echo htmlFunction::breakLine();
 		echo htmlFunction::horizontalline();
-
-
-
-
-
-
-     }
-
+		
+		echo htmlFunction::headingOne("To find Leap Year");
+		echo ArrayFunction::leapYear($year);
+ 		echo htmlFunction::breakLine();
+		echo htmlFunction::horizontalline();
+		}
+		public function __destruct()
+		{
+				echo"End of Week4 Assignment";
+		}
 }
 class stringFunction
 {
 
-	 static public function stringreplace($src,$tar,$string)
+	 static public function stringreplace($source,$tar,$string)
 	 {
-	 	$string = str_replace($src,$tar,$string);
+	 	$string = str_replace($source,$tar,$string);
 	 	return $string;
 	 }
 	  static public function stringCommparison($stringA,$stringB)
@@ -114,11 +113,7 @@ class stringFunction
 	 {	
 	 	return substr($date,-2);
 	 }
-	 static public function strSplit($date)
-	 {
-	 	$array=str_split($date,2);
-	 	return $array;
-     } 
+	  
 }
 class ArrayFunction
 {
@@ -126,6 +121,36 @@ class ArrayFunction
 	{
 	   return print_r(array_values($array));
 	}
+	static public function seperate($date)
+    {
+    	echo'<br>';
+    	echo 'Date is seperated:';
+    	$array2=(explode("/",($date)));
+    	$s=count($array2);
+    	for ($i=0;$i<$s;$i++)
+    	{
+    		echo $array2[$i]."";
+    	}
+    }
+    static public function leapYear($year)
+    {
+    	foreach ($year as $val)
+    	 {
+    	for ($i=0;$i<1;$i++)
+    	{
+    		switch(val)
+    		{
+    			case(($val%4)==0 and ($val%100)!=0 or ($val%400)==0);
+    			echo $val.'='.'True'.'<br>';
+    			break;
+
+    			default:
+    			echo $val.'='.'False'.'<br>';
+
+    		}
+    	}
+    	}
+    }
 }
 class htmlFunction
 {
